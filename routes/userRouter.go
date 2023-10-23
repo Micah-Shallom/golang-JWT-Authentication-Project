@@ -7,7 +7,7 @@ import (
 )
 
 func UserRoutes(incomingRoutes *gin.Engine) {
-	incomingRoutes.Use(middleware.Authenticate())
+	incomingRoutes.Use(middleware.Authenticate()) //authenticates users before allowing access to the below routes
 	incomingRoutes.GET("/users", controllers.GetUsers())
 	incomingRoutes.GET("/users/:user_id", controllers.GetUser())
 }
